@@ -1,4 +1,5 @@
 import landing from "./screens/landing";
+import reserve from "./screens/reserve";
 import React from "react";
 import { NavigationContainer } from "@react-navigation/native";
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
@@ -9,34 +10,17 @@ const App = () => (
 	<NavigationContainer>
 		<Stack.Navigator>
 			<Stack.Screen
-				name="Landing"
-				component={landing}
+				name="reserve"
+				component={reserve}
 				options={{
 					headerShown: false,
 				}}
 			/>
 			<Stack.Screen
-				name="MapScreen"
-				component={MapScreen}
+				name="Landing"
+				component={landing}
 				options={{
-					headerShown: true,
-					title: "Map",
-					headerTitleAlign:"center",
-					headerTitleStyle:{color:"#FFFFFF"},
-					headerStyle:{backgroundColor:"#242424"},
-					headerTintColor: 'white'
-				}}
-			/>
-			<Stack.Screen
-				name="ListScreen"
-				component={ListScreen}
-				options={{
-					headerShown: true,
-					title: "Universities",
-					headerTitleAlign:"center",
-					headerTitleStyle:{color:"#FFFFFF"},
-					headerStyle:{backgroundColor:"#242424"},
-					headerTintColor: 'white'
+					headerShown: false,
 				}}
 			/>
 		</Stack.Navigator>
