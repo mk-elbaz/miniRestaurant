@@ -1,20 +1,46 @@
-import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View } from 'react-native';
+import landing from "./screens/landing";
+import React from "react";
+import { NavigationContainer } from "@react-navigation/native";
+import { createNativeStackNavigator } from "@react-navigation/native-stack";
 
-export default function App() {
-  return (
-    <View style={styles.container}>
-      <Text>Open up App.tsx to start working on your app!</Text>
-      <StatusBar style="auto" />
-    </View>
-  );
-}
+const Stack = createNativeStackNavigator();
 
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-});
+const App = () => (
+	<NavigationContainer>
+		<Stack.Navigator>
+			<Stack.Screen
+				name="Landing"
+				component={landing}
+				options={{
+					headerShown: false,
+				}}
+			/>
+			<Stack.Screen
+				name="MapScreen"
+				component={MapScreen}
+				options={{
+					headerShown: true,
+					title: "Map",
+					headerTitleAlign:"center",
+					headerTitleStyle:{color:"#FFFFFF"},
+					headerStyle:{backgroundColor:"#242424"},
+					headerTintColor: 'white'
+				}}
+			/>
+			<Stack.Screen
+				name="ListScreen"
+				component={ListScreen}
+				options={{
+					headerShown: true,
+					title: "Universities",
+					headerTitleAlign:"center",
+					headerTitleStyle:{color:"#FFFFFF"},
+					headerStyle:{backgroundColor:"#242424"},
+					headerTintColor: 'white'
+				}}
+			/>
+		</Stack.Navigator>
+	</NavigationContainer>
+);
+
+export default App;
