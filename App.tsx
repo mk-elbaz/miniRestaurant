@@ -1,11 +1,11 @@
 import landing from "./screens/landing";
 import reserve from "./screens/reserve";
-import React, { useCallback, useEffect, useState } from 'react';
+import React, { useCallback, useEffect, useState } from "react";
 import { NavigationContainer } from "@react-navigation/native";
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
-import Entypo from '@expo/vector-icons/Entypo';
-import * as SplashScreen from 'expo-splash-screen';
-import * as Font from 'expo-font';
+import Entypo from "@expo/vector-icons/Entypo";
+import * as SplashScreen from "expo-splash-screen";
+import * as Font from "expo-font";
 const Stack = createNativeStackNavigator();
 import {
 	Image,
@@ -29,7 +29,7 @@ const App = () => {
 
 				// Artificially delay for two seconds to simulate a slow loading
 				// experience. Please remove this if you copy and paste the code!
-				await new Promise(resolve => setTimeout(resolve, 2000));
+				await new Promise((resolve) => setTimeout(resolve, 2000));
 			} catch (e) {
 				console.warn(e);
 			} finally {
@@ -56,18 +56,9 @@ const App = () => {
 	}
 
 	return (
-
 		<NavigationContainer>
-			<View onLayout={onLayoutRootView}>
-			</View>
+			<View onLayout={onLayoutRootView}></View>
 			<Stack.Navigator>
-				<Stack.Screen
-					name="reserve"
-					component={reserve}
-					options={{
-						headerShown: false,
-					}}
-				/>
 				<Stack.Screen
 					name="Landing"
 					component={landing}
@@ -75,8 +66,15 @@ const App = () => {
 						headerShown: false,
 					}}
 				/>
+				<Stack.Screen
+					name="reserve"
+					component={reserve}
+					options={{
+						headerShown: false,
+					}}
+				/>
 			</Stack.Navigator>
 		</NavigationContainer>
 	);
-}
+};
 export default App;
