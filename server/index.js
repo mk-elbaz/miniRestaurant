@@ -1,6 +1,8 @@
 const express = require('express');
 const app  = express();
 const { MongoClient } = require('mongodb');
+const menu = require('./menu.json');
+
 
 
 const MONGO_URI = 'mongodb+srv://baz:baz@cluster0.0bthm.mongodb.net/?retryWrites=true&w=majority'
@@ -32,9 +34,12 @@ const connect = async () => {
       "phone" : "01111",
   }
 
+  app.get('/menu', function (req, res) {
+    return res.send(menu);
+  });
   
 app.listen(3000, function() {
-    insert(order);
+    // insert(order);
     console.log("[OK] = HTTP Server listening on: http://localhost:3000");
   });
 
