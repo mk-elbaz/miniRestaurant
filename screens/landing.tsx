@@ -6,7 +6,7 @@ import {
 	Text,
 	View,
 } from "react-native";
-import StickyParallaxHeader from 'react-native-sticky-parallax-header'
+import StickyParallaxHeader from "react-native-sticky-parallax-header";
 import { StatusBar } from "expo-status-bar";
 import React, { useCallback, useEffect, useState } from "react";
 import Entypo from "@expo/vector-icons/Entypo";
@@ -16,14 +16,21 @@ import * as Font from "expo-font";
 const Landing = () => {
 	const [search, setSearch] = useState("");
 	const [appIsReady, setAppIsReady] = useState(false);
-
 	return (
-		<SafeAreaView>
-			<StickyParallaxHeader headerType="DetailsHeader" backgroundColor="orange" title="Welcome to BurgerOverflow"/>
-			<View style={styles.container}>
-
-			</View>
-		</SafeAreaView>
+		<View style={styles.container}>
+			<StickyParallaxHeader
+				headerType="AvatarHeader"
+				backgroundColor="#D55828"
+				title="Burger Overflow"
+				headerHeight={40}
+				hasBorderRadius={false}
+				subtitle="Welcome to Burger Overflow"
+				image = {require("../assets/Boorgir2.png")}
+				contentContainerStyles = {styles.container}
+			>
+				<Text style={styles.container}>huhigoehoirg</Text>
+			</StickyParallaxHeader>
+		</View>
 	);
 };
 const styles = StyleSheet.create({
