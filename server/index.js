@@ -3,6 +3,9 @@ const app = express();
 const { MongoClient } = require("mongodb");
 const menu = require("./menu.json");
 var bodyParser = require('body-parser')
+const sgMail = require('@sendgrid/mail')
+require('dotenv').config();
+
 
 const MONGO_URI =
   "mongodb+srv://baz:baz@cluster0.0bthm.mongodb.net/?retryWrites=true&w=majority";
@@ -36,6 +39,7 @@ app.get("/menu", function (req, res) {
 
 app.post("/reserve",  (req, res) => {
     insert(req.body);
+    sendMail(req.body.email, "Reserved!!", `Dear ${req.body.name}, Your table is reserved on ${req.body.date}`);
 });
 
 app.listen(3000, function () {
@@ -52,6 +56,28 @@ const insert = async (data) => {
     console.error(err);
   });
 };
+
+
+async function sendMail(to, subject, text,  html,) {
+  const msg = {
+    to: to, // Change to your recipient
+    from: 'mk.elbaz9248@gmail.com', // Change to your verified sender
+    subject: subject,
+    text: text,
+    html: html
+  }
+  sgMail.setApiKey(process.env.SENDGRID_API_KEY);
+  sgMail
+    .send(msg)
+    .then((response) => {
+      console.log(response[0].statusCode)
+      console.log(response[0].headers)
+    })
+    .catch((error) => {
+      console.error(error)
+    })
+
+}
 
 module.exports = {
   mongoClient,
