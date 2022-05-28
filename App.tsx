@@ -60,19 +60,20 @@ const App = () => {
 			<View onLayout={onLayoutRootView}></View>
 			<Stack.Navigator>
 				<Stack.Screen
-					name="Landing"
-					component={landing}
-					options={{
-						headerShown: false,
-					}}
-				/>
-				<Stack.Screen
 					name="reserve"
 					component={reserve}
 					options={{
 						headerShown: false,
 					}}
 				/>
+				<Stack.Screen
+					name="Landing"
+					component={landing}
+					options={{
+						headerShown: false,
+					}}
+				/>
+				
 			</Stack.Navigator>
 		</NavigationContainer>
 	);
