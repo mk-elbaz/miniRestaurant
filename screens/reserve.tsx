@@ -31,7 +31,7 @@ const Reserve = () => {
     const [name, setName] = useState("");
     const [email, setEmail] = useState("");
     const [phone, setPhone] = useState("");
-    const [noOfPersons, setPersons] = useState(0);
+    const [noOfPersons, setPersons] = useState("select number of persons");
     const [appIsReady, setAppIsReady] = useState(false);
 
     useEffect(() => {
@@ -91,7 +91,7 @@ const Reserve = () => {
                     { label: '6', value: '6' },
                 ]}
             >
-                <Text>Select number of persons</Text>
+                <Text>{noOfPersons}</Text>
             </RNPickerSelect>
             <DatePicker
                 style={{ width: 200 }}
