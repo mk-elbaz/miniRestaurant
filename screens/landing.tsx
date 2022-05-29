@@ -72,12 +72,15 @@ const Landing = () => {
 				</View>
 			)}
 		>
-			<ImageBackground style={{height:880,flex:1}} source={require("../assets/Untitled-2.png")}>
+			<ImageBackground
+				style={{ height: 880, flex: 1 }}
+				source={require("../assets/Untitled-2.png")}
+			>
 				<View style={{ padding: 15, alignContent: "center" }}>
 					<Card
 						containerStyle={{
-							backgroundColor: "#994C34",
-							borderColor: "grey",
+							backgroundColor: "#D55828",
+							borderColor: "white",
 							borderRadius: 20,
 						}}
 					>
