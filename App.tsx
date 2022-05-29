@@ -58,6 +58,13 @@ const App = () => {
 	return (
 		<NavigationContainer>
 			<View onLayout={onLayoutRootView}></View>
+			<Stack.Screen
+				name="Landing"
+				component={landing}
+				options={{
+					headerShown: false,
+				}}
+			/>
 			<Stack.Navigator>
 				<Stack.Screen
 					name="reserve"
@@ -66,14 +73,6 @@ const App = () => {
 						headerShown: false,
 					}}
 				/>
-				<Stack.Screen
-					name="Landing"
-					component={landing}
-					options={{
-						headerShown: false,
-					}}
-				/>
-				
 			</Stack.Navigator>
 		</NavigationContainer>
 	);
