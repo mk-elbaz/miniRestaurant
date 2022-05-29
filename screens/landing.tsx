@@ -18,7 +18,7 @@ import Carousel, {
 } from "react-native-snap-carousel";
 import * as Font from "expo-font";
 import * as axios from "axios";
-import { Card } from "react-native-elements";
+import { Card, Divider } from "react-native-elements";
 
 const renderItem = (item: string) => {
 	return (
@@ -72,40 +72,49 @@ const Landing = () => {
 				</View>
 			)}
 		>
-			<ImageBackground style={{height:880,flex:1}} source={require("../assets/Untitled-2.png")}>
-				<View style={{ padding: 15, alignContent: "center" }}>
-					<Card
-						containerStyle={{
-							backgroundColor: "#994C34",
-							borderColor: "grey",
-							borderRadius: 20,
-						}}
-					>
-						<Card.Title adjustsFontSizeToFit style={{ color: "white" }}>
-							Offers
-						</Card.Title>
-						<Card.Divider color="white" />
-						<Carousel
-							layout="tinder"
-							data={images}
-							renderItem={renderItem}
-							itemWidth={200}
-							itemHeight={50}
-							sliderWidth={300}
-							onSnapToItem={(index) => setIndex(index)}
-						/>
+			{/* <ImageBackground style={{height:880,flex:1}} source={require("../assets/Untitled-2.png")}> */}
+			<View style={{ padding: 15, alignContent: "center" }}>
+				<Text
+					style={{
+						alignSelf: "center",
+						fontSize: 25,
+						fontFamily: "sans-serif-condensed",
+						bottom: -45,
+					}}
+				>
+					Welcome to BurgerOverflow
+				</Text>
+				<Divider style={{ marginTop: 60 }} leadingInset={16} />
+				<Card
+					containerStyle={{
+						backgroundColor: "#994C34",
+						borderColor: "grey",
+						borderRadius: 1,
 
-						<Pagination
-							activeDotIndex={index}
-							dotsLength={images.length}
-							dotColor={"white"}
-							inactiveDotColor={"black"}
-							inactiveDotOpacity={1}
-							containerStyle={{ margin: -20 }}
-						/>
-					</Card>
-				</View>
-			</ImageBackground>
+						width: 330,
+					}}
+				>
+					<Carousel
+						layout="tinder"
+						data={images}
+						renderItem={renderItem}
+						itemWidth={200}
+						itemHeight={50}
+						sliderWidth={300}
+						onSnapToItem={(index) => setIndex(index)}
+					/>
+
+					<Pagination
+						activeDotIndex={index}
+						dotsLength={images.length}
+						dotColor={"white"}
+						inactiveDotColor={"black"}
+						inactiveDotOpacity={1}
+						containerStyle={{ margin: -20 }}
+					/>
+				</Card>
+			</View>
+			{/* </ImageBackground> */}
 		</ParallaxScrollView>
 	);
 };
