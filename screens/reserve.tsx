@@ -155,7 +155,7 @@ const Reserve = () => {
 								onPress={submit}
 								style={styles.appButtonContainer}
 							>
-								<Text style={{ alignSelf: "center" }}>submit</Text>
+								<Text style={{ alignSelf: "center" }}>Reserve</Text>
 							</TouchableOpacity>
 						</View>
 					</View>

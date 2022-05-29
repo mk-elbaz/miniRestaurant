@@ -114,37 +114,39 @@ const Landing = () => {
 								</TouchableOpacity>
 							</Card>
 						</View>
-						<Card
-							containerStyle={{
-								backgroundColor: "#242424",
-								borderColor: "gray",
-								borderRadius: 10,
-							}}
-						>
-							<Card.Title
-								adjustsFontSizeToFit
-								style={{ color: "white", fontSize: 17 }}
-							>
-								Check the Menu
-							</Card.Title>
-							<Card.Divider color="white" />
-							<Image
-								style={{
-									resizeMode: "contain",
-									width: 300,
-									height: 200,
-									right: -5,
+						<View style={styles.container3}>
+							<Card
+								containerStyle={{
+									backgroundColor: "#242424",
+									borderColor: "gray",
+									borderRadius: 10,
 								}}
-								source={require("../assets/menu-5.png")}
-							></Image>
-							<Card.Divider color="white" style={{ padding: 5 }} />
-							<TouchableOpacity
-								onPress={() => navigation.navigate("menu" as never)}
-								style={styles.appButtonContainer}
 							>
-								<Text style={styles.appButtonText}>Browse Menu</Text>
-							</TouchableOpacity>
-						</Card>
+								<Card.Title
+									adjustsFontSizeToFit
+									style={{ color: "white", fontSize: 17 }}
+								>
+									Check the Menu
+								</Card.Title>
+								<Card.Divider color="white" />
+								<Image
+									style={{
+										resizeMode: "contain",
+										width: 300,
+										height: 200,
+										right: -5,
+									}}
+									source={require("../assets/menu-5.png")}
+								></Image>
+								<Card.Divider color="white" style={{ padding: 5 }} />
+								<TouchableOpacity
+									onPress={() => navigation.navigate("menu" as never)}
+									style={styles.appButtonContainer}
+								>
+									<Text style={styles.appButtonText}>Browse Menu</Text>
+								</TouchableOpacity>
+							</Card>
+						</View>
 					</View>
 					<StatusBar style="light" />
 					<Text> </Text>
