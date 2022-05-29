@@ -1,5 +1,6 @@
 import landing from "./screens/landing";
 import reserve from "./screens/reserve";
+import menu from "./screens/menu";
 import React, { useCallback, useEffect, useState } from "react";
 import { NavigationContainer } from "@react-navigation/native";
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
@@ -38,19 +39,19 @@ const App = () => {
 			}
 		}
 		prepare();
-		const load = async function() {
+		const load = async function () {
 			await Font.loadAsync({
-			  // Load a font `Montserrat` from a static resource
-			  Brush: require('./assets/fonts/BRUSHSCI.ttf'),
-		
-			  // Any string can be used as the fontFamily name. Here we use an object to provide more control
-			  'Brush2': {
-				uri: require('./assets/fonts/BRUSHSCI.ttf'),
-				display: Font.FontDisplay.FALLBACK,
-			  },
+				// Load a font `Montserrat` from a static resource
+				Brush: require("./assets/fonts/BRUSHSCI.ttf"),
+
+				// Any string can be used as the fontFamily name. Here we use an object to provide more control
+				Brush2: {
+					uri: require("./assets/fonts/BRUSHSCI.ttf"),
+					display: Font.FontDisplay.FALLBACK,
+				},
 			});
-		  }
-		  load();
+		};
+		load();
 	});
 
 	const onLayoutRootView = useCallback(async () => {
@@ -82,6 +83,13 @@ const App = () => {
 				<Stack.Screen
 					name="reserve"
 					component={reserve}
+					options={{
+						headerShown: false,
+					}}
+				/>
+				<Stack.Screen
+					name="menu"
+					component={menu}
 					options={{
 						headerShown: false,
 					}}
