@@ -54,103 +54,101 @@ const Landing = () => {
 				style={{ flex: 1 }}
 				source={require("../assets/bckgrnd1-01.png")}
 			>
-				<SafeAreaView>
-					<View
-						style={{
-							padding: 15,
-							alignContent: "center",
-							top: 30,
-						}}
-					>
-						<View style={styles.container2}>
-							<Carousel
-								layout="default"
-								data={images}
-								renderItem={renderItem}
-								itemWidth={430}
-								itemHeight={400}
-								sliderWidth={800}
-								onSnapToItem={(index) => setIndex(index)}
-							/>
-							<Pagination
-								activeDotIndex={index}
-								dotsLength={images.length}
-								dotColor={"#D55828"}
-								inactiveDotColor={"white"}
-								inactiveDotOpacity={1}
-								containerStyle={{ margin: -80 }}
-							/>
-						</View>
-						<View style={styles.container3}>
-							<Card
-								containerStyle={{
-									backgroundColor: "#242424",
-									borderColor: "gray",
-									borderRadius: 10,
-								}}
-							>
-								<Card.Title
-									adjustsFontSizeToFit
-									style={{ color: "white", fontSize: 17 }}
-								>
-									Table Reservation
-								</Card.Title>
-								<Card.Divider color="white" />
-								<Image
-									style={{
-										resizeMode: "contain",
-										width: 300,
-										height: 200,
-										right: -5,
-									}}
-									source={require("../assets/cozy-restaurant-with-people-waiter_175935-230.png")}
-								></Image>
-								<Card.Divider color="white" style={{ padding: 5 }} />
-								<TouchableOpacity
-									onPress={() => navigation.navigate("reserve" as never)}
-									style={styles.appButtonContainer}
-								>
-									<Text style={styles.appButtonText}>Reserve Here</Text>
-								</TouchableOpacity>
-							</Card>
-						</View>
-						<View style={styles.container3}>
-							<Card
-								containerStyle={{
-									backgroundColor: "#242424",
-									borderColor: "gray",
-									borderRadius: 10,
-								}}
-							>
-								<Card.Title
-									adjustsFontSizeToFit
-									style={{ color: "white", fontSize: 17 }}
-								>
-									Check the Menu
-								</Card.Title>
-								<Card.Divider color="white" />
-								<Image
-									style={{
-										resizeMode: "contain",
-										width: 300,
-										height: 200,
-										right: -5,
-									}}
-									source={require("../assets/menu-5.png")}
-								></Image>
-								<Card.Divider color="white" style={{ padding: 5 }} />
-								<TouchableOpacity
-									onPress={() => navigation.navigate("menu" as never)}
-									style={styles.appButtonContainer}
-								>
-									<Text style={styles.appButtonText}>Browse Menu</Text>
-								</TouchableOpacity>
-							</Card>
-						</View>
+				<View
+					style={{
+						padding: 15,
+						alignContent: "center",
+						top: 30,
+					}}
+				>
+					<View style={styles.container2}>
+						<Carousel
+							layout="default"
+							data={images}
+							renderItem={renderItem}
+							itemWidth={430}
+							itemHeight={400}
+							sliderWidth={800}
+							onSnapToItem={(index) => setIndex(index)}
+						/>
+						<Pagination
+							activeDotIndex={index}
+							dotsLength={images.length}
+							dotColor={"#D55828"}
+							inactiveDotColor={"white"}
+							inactiveDotOpacity={1}
+							containerStyle={{ margin: -80 }}
+						/>
 					</View>
-					<StatusBar style="light" />
-					<Text> </Text>
-				</SafeAreaView>
+					<View style={styles.container3}>
+						<Card
+							containerStyle={{
+								backgroundColor: "#242424",
+								borderColor: "gray",
+								borderRadius: 10,
+							}}
+						>
+							<Card.Title
+								adjustsFontSizeToFit
+								style={{ color: "white", fontSize: 17 }}
+							>
+								Table Reservation
+							</Card.Title>
+							<Card.Divider color="white" />
+							<Image
+								style={{
+									resizeMode: "contain",
+									width: 300,
+									height: 200,
+									right: -5,
+								}}
+								source={require("../assets/cozy-restaurant-with-people-waiter_175935-230.png")}
+							></Image>
+							<Card.Divider color="white" style={{ padding: 5 }} />
+							<TouchableOpacity
+								onPress={() => navigation.navigate("reserve" as never)}
+								style={styles.appButtonContainer}
+							>
+								<Text style={styles.appButtonText}>Reserve Here</Text>
+							</TouchableOpacity>
+						</Card>
+					</View>
+					<View style={styles.container3}>
+						<Card
+							containerStyle={{
+								backgroundColor: "#242424",
+								borderColor: "gray",
+								borderRadius: 10,
+							}}
+						>
+							<Card.Title
+								adjustsFontSizeToFit
+								style={{ color: "white", fontSize: 17 }}
+							>
+								Check the Menu
+							</Card.Title>
+							<Card.Divider color="white" />
+							<Image
+								style={{
+									resizeMode: "contain",
+									width: 300,
+									height: 200,
+									right: -5,
+								}}
+								source={require("../assets/menu-5.png")}
+							></Image>
+							<Card.Divider color="white" style={{ padding: 5 }} />
+							<TouchableOpacity
+								onPress={() => navigation.navigate("menu" as never)}
+								style={styles.appButtonContainer}
+							>
+								<Text style={styles.appButtonText}>Browse Menu</Text>
+							</TouchableOpacity>
+						</Card>
+					</View>
+				</View>
+				<StatusBar style="light" />
+				<Text> </Text>
 			</ImageBackground>
 		</ParallaxScrollView>
 	);
