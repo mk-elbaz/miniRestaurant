@@ -55,7 +55,7 @@ const Landing = () => {
 		<ParallaxScrollView
 			backgroundColor="#D55828"
 			contentBackgroundColor="white"
-			parallaxHeaderHeight={235}
+			parallaxHeaderHeight={90}
 			renderForeground={() => (
 				<View
 					style={{
@@ -65,19 +65,25 @@ const Landing = () => {
 						justifyContent: "center",
 					}}
 				>
-					<Image
-						style={styles.image2}
-						source={require("../assets/logo2-01.png")}
-					/>
+					<Text
+						style={{
+							fontFamily: "Brush",
+							alignSelf: "center",
+							fontSize: 45,
+							color: "white",
+						}}
+					>
+						Burger Overflow
+					</Text>
 				</View>
 			)}
 		>
-			<ImageBackground
+			{/* <ImageBackground
 				style={{ height: 880, flex: 1 }}
 				source={require("../assets/Untitled-2.png")}
-			>
-				<View style={{ padding: 15, alignContent: "center" }}>
-					<Card
+			> */}
+			<View style={{ padding: 15, alignContent: "center" }}>
+				{/* <Card
 						containerStyle={{
 							backgroundColor: "#D55828",
 							borderColor: "white",
@@ -106,9 +112,35 @@ const Landing = () => {
 							inactiveDotOpacity={1}
 							containerStyle={{ margin: -20 }}
 						/>
-					</Card>
+					</Card> */}
+				<Text style={{ fontFamily: "Brush", fontSize: 40, color: "black" ,right:-10}}>
+					Offers
+				</Text>
+				<View style={styles.container}>
+					<Carousel
+						layout="tinder"
+						data={images}
+						renderItem={renderItem}
+						itemWidth={200}
+						itemHeight={50}
+						sliderWidth={300}
+						onSnapToItem={(index) => setIndex(index)}
+					/>
+					<Pagination
+						activeDotIndex={index}
+						dotsLength={images.length}
+						dotColor={"white"}
+						inactiveDotColor={"black"}
+						inactiveDotOpacity={1}
+						containerStyle={{ margin: -20 }}
+					/>
 				</View>
-			</ImageBackground>
+				{/* <View>
+					<Text>euhfie</Text>
+				</View> */}
+			</View>
+
+			{/* </ImageBackground> */}
 		</ParallaxScrollView>
 	);
 };
@@ -124,7 +156,6 @@ const styles = StyleSheet.create({
 		flex: 1,
 		alignItems: "center",
 		justifyContent: "center",
-		height: 1000,
 	},
 	image2: {
 		flex: 1,

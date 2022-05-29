@@ -38,6 +38,19 @@ const App = () => {
 			}
 		}
 		prepare();
+		const load = async function() {
+			await Font.loadAsync({
+			  // Load a font `Montserrat` from a static resource
+			  Brush: require('./assets/fonts/BRUSHSCI.ttf'),
+		
+			  // Any string can be used as the fontFamily name. Here we use an object to provide more control
+			  'Brush2': {
+				uri: require('./assets/fonts/BRUSHSCI.ttf'),
+				display: Font.FontDisplay.FALLBACK,
+			  },
+			});
+		  }
+		  load();
 	});
 
 	const onLayoutRootView = useCallback(async () => {
