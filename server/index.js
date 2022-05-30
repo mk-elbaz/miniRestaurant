@@ -34,7 +34,7 @@ const mongoClient = async (collectionName) => {
 };
 
 app.get("/menu", function (req, res) {
-  return res.send(menu);
+  return res.send(menu["Burgers"]);
 });
 
 app.post("/reserve",  (req, res) => {

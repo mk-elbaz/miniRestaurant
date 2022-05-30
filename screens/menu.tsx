@@ -24,8 +24,7 @@ import { Card } from "react-native-elements";
 import { useNavigation } from "@react-navigation/native";
 
 const renderItem2 = ({ item }) => {
-	const [Index, setIndex] = useState(0);
-	console.log(item.name);
+	console.log("aaaaaa",item.name);
 	return (
 		<View>
 			<Card>
@@ -40,17 +39,24 @@ const renderItem2 = ({ item }) => {
 	);
 };
 const Menu = () => {
-	const [menu, setMenu] = useState<Menu[]>();
+	const [menu, setMenu] = useState<Menuu[]>();
 
 	useEffect(() => {
-		Promise.all([axios.default.get(`http://192.168.2.244:3000/menu`)]).then(
+		// Promise.all([axios.default.get(`http://192.168.2.244:3000/menu`)]).then(
+			Promise.all([axios.default.get(`http://localhost:3000/menu`)]).then(
 			([{ data: menuResults }]) => {
 				if (menuResults)
 				 setMenu(menuResults);
-				console.log(menu);
+				// console.log(menu)
 			}
 		);
-	}, []);
+		console.log(menu)
+		// meow()
+	},[]);
+
+	const meow = ()=>{
+		console.log("zzzzzzz",menu)
+	}
 
 	return (
 		// <ParallaxScrollView
@@ -167,7 +173,7 @@ const styles = StyleSheet.create({
 		textTransform: "uppercase",
 	},
 });
-type Menu = {
+type Menuu = {
 	name: string;
 	description: string;
 	image: string;
