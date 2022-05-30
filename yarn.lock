@@ -5806,6 +5806,19 @@ react-is@^16.13.0, react-is@^16.13.1, react-is@^16.7.0:
   resolved "https://registry.yarnpkg.com/react-is/-/react-is-16.13.1.tgz#789729a4dc36de2999dc156dd6c1d9c18cea56a4"
   integrity sha512-24e6ynE2H+OKt4kqsOvNd8kBpV65zoxbA4BVsEOB3ARVWQki/DHzaUoC5KuON/BiccDaCCTZBuOcfZs70kR8bQ==
 
+react-native-actions-sheet-picker@^0.3.0:
+  version "0.3.0"
+  resolved "https://registry.yarnpkg.com/react-native-actions-sheet-picker/-/react-native-actions-sheet-picker-0.3.0.tgz#232262fa31df346aeb9b407688e91b2398be9663"
+  integrity sha512-tjgo/axjlWEltZ6woFgXNYL/EDJW9+7jvInZn9h4cjqLZcvtZWhpIVl1P66QOXc2bobtGLAqtzyReljf7nN14w==
+  dependencies:
+    react-native-actions-sheet "^0.6.1"
+    react-native-gesture-handler "^2.4.2"
+
+react-native-actions-sheet@^0.6.1:
+  version "0.6.1"
+  resolved "https://registry.yarnpkg.com/react-native-actions-sheet/-/react-native-actions-sheet-0.6.1.tgz#ccfa2e3d717c9c44d7d51fc084876324bee0e8d0"
+  integrity sha512-cBDw1nVrgV9Wluonb/r3pXKxjN2Wm6iGs+DjlAoHoGQj0pD6QR2aLrXyO30334pjWnJE4oMRFv8G02PM8ikdNg==
+
 react-native-codegen@^0.0.17:
   version "0.0.17"
   resolved "https://registry.yarnpkg.com/react-native-codegen/-/react-native-codegen-0.0.17.tgz#83fb814d94061cbd46667f510d2ddba35ffb50ac"
@@ -5860,6 +5873,17 @@ react-native-form@^2.1.3:
   version "2.1.3"
   resolved "https://registry.yarnpkg.com/react-native-form/-/react-native-form-2.1.3.tgz#87550625e694c415b28e03853d7ea249ba2323c0"
   integrity sha512-33XZ4tX9SEPDcd8jz0/D0IHUpn3oGPW3gtHB294SK3Bvi0XpSNRKMjydbmoO4tpNHVMnZKtCXrr0VAURn/kGXQ==
+
+react-native-gesture-handler@^2.4.2:
+  version "2.4.2"
+  resolved "https://registry.yarnpkg.com/react-native-gesture-handler/-/react-native-gesture-handler-2.4.2.tgz#de93760b0bc251d94e8ae692f9850ec3ed2e4f27"
+  integrity sha512-K3oMiQV7NOVB5RvNlxkyJxU1Gn6m1cYu53MoFA542FVDSTR491d1eQkWDdqy4lW52rfF7IK7eE1LCi+kTJx7jw==
+  dependencies:
+    "@egjs/hammerjs" "^2.0.17"
+    hoist-non-react-statics "^3.3.0"
+    invariant "^2.2.4"
+    lodash "^4.17.21"
+    prop-types "^15.7.2"
 
 react-native-gesture-handler@~2.2.1:
   version "2.2.1"

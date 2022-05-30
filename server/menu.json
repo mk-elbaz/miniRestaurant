@@ -44,14 +44,14 @@
 		},
 		{
 			"name": "Onion Rings",
-			"description": "Crispy finely sliced onion rings",
+			"description": "Crispy finely sliced onion rings.",
 			"image": "https://thebuffaloburger.com/_next/image?url=https%3A%2F%2Fbuffalonlineorderingprod.s3.eu-west-1.amazonaws.com%2Fmenu_items%2F163f48aee403cf658128c694629890ad.png&w=384&q=75",
 			"price": "6.5",
 			"type": "Appetizers"
 		},
 		{
 			"name": "Cheesy Fries",
-			"description": "Served with Thousand Island sauce",
+			"description": "Served with Thousand Island sauce.",
 			"image": "https://thebuffaloburger.com/_next/image?url=https%3A%2F%2Fbuffalonlineorderingprod.s3.eu-west-1.amazonaws.com%2Fmenu_items%2F0a8f39bde7dc27f249a1b1d36d73ebe3.png&w=384&q=75",
 			"price": "7",
 			"type": "Appetizers"

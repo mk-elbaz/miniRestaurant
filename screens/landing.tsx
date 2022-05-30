@@ -63,7 +63,7 @@ const Landing = () => {
 				>
 					<View style={styles.container2}>
 						<Carousel
-							layout="default"
+							layout="tinder"
 							data={images}
 							renderItem={renderItem}
 							itemWidth={430}
@@ -83,7 +83,7 @@ const Landing = () => {
 					<View style={styles.container3}>
 						<Card
 							containerStyle={{
-								backgroundColor: "#242424",
+								backgroundColor: "#533839",
 								borderColor: "gray",
 								borderRadius: 10,
 							}}
@@ -116,7 +116,7 @@ const Landing = () => {
 					<View style={styles.container3}>
 						<Card
 							containerStyle={{
-								backgroundColor: "#242424",
+								backgroundColor: "#533839",
 								borderColor: "gray",
 								borderRadius: 10,
 							}}
@@ -179,7 +179,7 @@ const styles = StyleSheet.create({
 		// backgroundColor: "#D55828",
 		width: 400,
 		height: 400,
-		left: -9,
+		left: -16,
 	},
 	image2: {
 		flex: 1,

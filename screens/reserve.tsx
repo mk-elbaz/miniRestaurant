@@ -19,13 +19,13 @@ import * as Font from "expo-font";
 import DateTimePicker from "@react-native-community/datetimepicker";
 import RNPickerSelect from "react-native-picker-select";
 import RNDateTimePicker from "@react-native-community/datetimepicker";
-import { Picker } from "@react-native-picker/picker";
 const axios = require("axios");
 import moment from "moment";
 import RNPicker from "@bahmanbinary/rnpicker";
 import { Card, Divider } from "react-native-elements";
 import { Value } from "react-native-reanimated";
 import ParallaxScrollView from "react-native-parallax-scroll-view";
+import { Picker, onOpen } from "react-native-actions-sheet-picker";
 
 const Reserve = () => {
 	const [dateOfReservation, setDate] = useState(new Date());
@@ -36,7 +36,7 @@ const Reserve = () => {
 	const [appIsReady, setAppIsReady] = useState(false);
 	const [open, setOpen] = useState(false);
 
-	useEffect(() => { });
+	useEffect(() => {});
 
 	const data = {
 		name: name,
@@ -63,7 +63,9 @@ const Reserve = () => {
 			})
 			.catch((e) => {
 				console.log(e);
-				alert("Invalid info/Connection Error. Make sure all the information is correct/try again later")
+				alert(
+					"Invalid info/Connection Error. Make sure all the information is correct/try again later"
+				);
 			});
 	};
 	return (
@@ -129,6 +131,26 @@ const Reserve = () => {
 							}}
 							placeholder="Please choose"
 						/>
+						{/* <Picker
+							id="country"
+							data={filteredData}
+							inputValue={query}
+							searchable={true}
+							label="Select Country"
+							setSelected={setSelected}
+							onSearch={onSearch}
+							renderListItem={function (
+								item: unknown,
+								index: number
+							): ReactElement<any, string | JSXElementConstructor<any>> {
+								throw new Error("Function not implemented.");
+							}}
+						/> */}
+						<select>
+							<option>
+								<Text>ay zeft</Text>
+							</option>
+						</select>
 						<Card.Divider></Card.Divider>
 						<Text style={{ left: 10 }}>
 							Please choose the date of your reservation
