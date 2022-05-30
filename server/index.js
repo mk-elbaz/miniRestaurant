@@ -41,7 +41,7 @@ app.post("/reserve", (req, res) => {
 	sendMail(
 		req.body.email,
 		"Reserved!!, Table reservation at Burger Overflow",
-		`Dear ${req.body.name}, Your table is reserved on the following date ${req.body.date},{require("../assets/Burger_logo2-01.png)}`
+		`Dear ${req.body.name}, Your table is reserved on the following date ${req.body.date}`
 	);
 });
 
@@ -63,7 +63,7 @@ const insert = async (data) => {
 async function sendMail(to, subject, text, html) {
 	const msg = {
 		to: to, // Change to your recipient
-		from: "mk.elbaz9248@gmail.com", // Change to your verified sender
+		from: "burgeroverflow@gmail.com", // Change to your verified sender
 		subject: subject,
 		text: text,
 		html: html,

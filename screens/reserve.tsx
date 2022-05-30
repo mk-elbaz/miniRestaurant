@@ -131,26 +131,8 @@ const Reserve = () => {
 							}}
 							placeholder="Please choose"
 						/>
-						{/* <Picker
-							id="country"
-							data={filteredData}
-							inputValue={query}
-							searchable={true}
-							label="Select Country"
-							setSelected={setSelected}
-							onSearch={onSearch}
-							renderListItem={function (
-								item: unknown,
-								index: number
-							): ReactElement<any, string | JSXElementConstructor<any>> {
-								throw new Error("Function not implemented.");
-							}}
-						/> */}
-						<select>
-							<option>
-								<Text>ay zeft</Text>
-							</option>
-						</select>
+						
+						
 						<Card.Divider></Card.Divider>
 						<Text style={{ left: 10 }}>
 							Please choose the date of your reservation
