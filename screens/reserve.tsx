@@ -54,8 +54,16 @@ const Reserve = () => {
 					Accept: "application/json",
 				},
 			})
-			.then((res) => console.log(res))
-			.catch((e) => console.log(e));
+			.then((res) => {
+				console.log(res);
+				alert(
+					"Reservation Successful! please check your email for confirmation(maybe in junk folder)"
+				);
+			})
+			.catch((e) => {
+				console.log(e);
+				alert("Invalid info/Connection Error. Make sure all the information is correct/try again later")
+			});
 	};
 	return (
 		<ParallaxScrollView
