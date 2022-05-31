@@ -52,19 +52,20 @@ const Reserve = () => {
 	const submit = async () => {
 		console.log(data);
 		await axios
-			// .post("http://192.168.2.244:3000/reserve", data, {
-			.post("http://localhost:3000/reserve", data, {
+			.post("http://192.168.2.244:3000/reserve", data, {
+			// .post("http://localhost:3000/reserve", data, {
 				headers: {
 					Accept: "application/json",
 				},
 			})
-			.then((res) => {
+			.then((res: any) => {
 				console.log(res);
 				alert(
 					"Reservation Successful! please check your email for confirmation(maybe in junk folder)"
 				);
+				navigation.navigate("Landing" as never)
 			})
-			.catch((e) => {
+			.catch((e: any) => {
 				console.log(e);
 				alert(
 					"Invalid info/Connection Error. Make sure all the information is correct/try again later"
@@ -120,6 +121,7 @@ const Reserve = () => {
 						placeholder="Enter your name"
 						value={name}
 						style={styles.input}
+						autoCapitalize = 'none'
 						onChangeText={(text: string) => setName(text)}
 					/>
 					<Card.Divider></Card.Divider>
@@ -128,6 +130,7 @@ const Reserve = () => {
 						placeholder="Email"
 						value={email}
 						style={styles.input}
+						autoCapitalize = 'none'
 						onChangeText={(text: string) => setEmail(text)}
 					/>
 					<Card.Divider></Card.Divider>
@@ -135,6 +138,7 @@ const Reserve = () => {
 					<TextInput
 						placeholder="Phone Number"
 						value={phone}
+						autoCapitalize = 'none'
 						style={styles.input}
 						onChangeText={(text: string) => setPhone(text)}
 					/>
@@ -163,7 +167,7 @@ const Reserve = () => {
 						<RNDateTimePicker
 							style={{ width: 200, height: 200 }}
 							value={new Date(dateOfReservation)}
-							mode="datetime"
+							mode="date"
 							minimumDate={new Date(2022, 5, 27)}
 							themeVariant="dark"
 							onChange={(_: any, date?: Date) => {

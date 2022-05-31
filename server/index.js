@@ -43,6 +43,9 @@ app.post("/reserve", (req, res) => {
 		"Reserved!!, Table reservation at Burger Overflow",
 		`Dear ${req.body.name}, Your table is reserved on the following date ${req.body.date}`
 	);
+	res.send(
+		"202"
+	)
 });
 
 app.listen(3000, function () {

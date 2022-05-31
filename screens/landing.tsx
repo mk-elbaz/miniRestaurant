@@ -83,7 +83,7 @@ const Landing = () => {
 					<View style={styles.container3}>
 						<Card
 							containerStyle={{
-								backgroundColor: "#533839",
+								backgroundColor: "#2A2024",
 								borderColor: "gray",
 								borderRadius: 10,
 							}}
@@ -116,7 +116,7 @@ const Landing = () => {
 					<View style={styles.container3}>
 						<Card
 							containerStyle={{
-								backgroundColor: "#533839",
+								backgroundColor: "#2A2024",
 								borderColor: "gray",
 								borderRadius: 10,
 							}}
