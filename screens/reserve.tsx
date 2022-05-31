@@ -26,6 +26,8 @@ import { Card, Divider } from "react-native-elements";
 import { Value } from "react-native-reanimated";
 import ParallaxScrollView from "react-native-parallax-scroll-view";
 import { Picker, onOpen } from "react-native-actions-sheet-picker";
+import { Ionicons } from "@expo/vector-icons";
+import { useNavigation } from "@react-navigation/native";
 
 const Reserve = () => {
 	const [dateOfReservation, setDate] = useState(new Date());
@@ -35,6 +37,7 @@ const Reserve = () => {
 	const [noOfPersons, setPersons] = useState("select number of persons");
 	const [appIsReady, setAppIsReady] = useState(false);
 	const [open, setOpen] = useState(false);
+	const navigation = useNavigation();
 
 	useEffect(() => {});
 
@@ -69,108 +72,124 @@ const Reserve = () => {
 			});
 	};
 	return (
-		<ParallaxScrollView
-			backgroundColor="#D55828"
-			contentBackgroundColor="#131216"
-			parallaxHeaderHeight={0}
+		// <ParallaxScrollView
+		// 	backgroundColor="#D55828"
+		// 	contentBackgroundColor="#131216"
+		// 	parallaxHeaderHeight={0}
+		// >
+		<ImageBackground
+			style={{ height: 800 }}
+			source={require("../assets/bckgrnd1-01.png")}
 		>
-			<ImageBackground
-				style={{ height: 1000 }}
-				source={require("../assets/bckgrnd1-01.png")}
-			>
-				<View style={styles.container}>
-					<View style={{ backgroundColor: "white" }}>
-						<Text
-							style={{
-								alignSelf: "center",
-								fontFamily: "Brush",
-								fontSize: 38,
-								padding: 10,
-								margin: 10,
-								bottom: 10,
-							}}
-						>
-							Reservation
-						</Text>
-						<Text style={{ left: 10 }}>Please enter your name</Text>
-						<TextInput
-							placeholder="Enter your name"
-							value={name}
-							style={styles.input}
-							onChangeText={(text: string) => setName(text)}
-						/>
-						<Card.Divider></Card.Divider>
-						<Text style={{ left: 10 }}>Please enter your email</Text>
-						<TextInput
-							placeholder="Email"
-							value={email}
-							style={styles.input}
-							onChangeText={(text: string) => setEmail(text)}
-						/>
-						<Card.Divider></Card.Divider>
-						<Text style={{ left: 10 }}>Please enter your phone number</Text>
-						<TextInput
-							placeholder="Phone Number"
-							value={phone}
-							style={styles.input}
-							onChangeText={(text: string) => setPhone(text)}
-						/>
-						<Card.Divider></Card.Divider>
-						<Text style={{ left: 10 }}>Please choose the number of people</Text>
-						<RNPicker
-							data={[
-								{ label: "people: 1", value: 1 },
-								{ label: "people: 2", value: 2 },
-								{ label: "people: 3", value: 3 },
-								{ label: "people: 4", value: 4 },
-								{ label: "people: 5", value: 5 },
-								{ label: "people: 6", value: 6 },
-							]}
-							onSelect={(value) => {
-								setPersons(value["value"]);
-							}}
-							placeholder="Please choose"
-						/>
-						
-						
-						<Card.Divider></Card.Divider>
-						<Text style={{ left: 10 }}>
-							Please choose the date of your reservation
-						</Text>
-						{open ? (
-							<RNDateTimePicker
-								style={{ width: 200, height: 200 }}
-								value={new Date(dateOfReservation)}
-								mode="datetime"
-								minimumDate={new Date(2022, 5, 27)}
-								themeVariant="dark"
-								onChange={(_: any, date?: Date) => {
-									setOpen(false);
-									setDate(date);
-									// console.log("aaaa", dateOfReservation);
-								}}
-							/>
-						) : null}
+			<View style={styles.container}>
+			<TouchableOpacity
+						onPress={() => navigation.navigate("Landing" as never)}
+						style={{
+							bottom:10,
+							right:170,
+							elevation: 8,
+							backgroundColor: "#D55828",
+							borderRadius: 10,
+							paddingVertical: 10,
+							paddingHorizontal: 12,
+							width: 44,
+							height: 44,
+							margin: 10,
+							alignContent: "center",
+						}}
+					>
+						<Ionicons name="md-arrow-back" size={23} color="black" />
+					</TouchableOpacity>
+				<View style={{ backgroundColor: "white" }}>
+					
 
-						<TouchableOpacity
-							style={styles.appButtonContainer2}
-							onPress={() => setOpen(true)}
-						>
-							<Text style={{ alignSelf: "center", color: "white" }}>
-								Click to open calendar
-							</Text>
-						</TouchableOpacity>
-						<Card.Divider></Card.Divider>
-						<TouchableOpacity
-							onPress={submit}
-							style={styles.appButtonContainer}
-						>
-							<Text style={{ alignSelf: "center" }}>Reserve</Text>
-						</TouchableOpacity>
-					</View>
+					<Text
+						style={{
+							alignSelf: "center",
+							fontFamily: "Brush",
+							fontSize: 38,
+							padding: 10,
+							margin: 10,
+							bottom: 10,
+						}}
+					>
+						Reservation
+					</Text>
+					<Text style={{ left: 10 }}>Please enter your name</Text>
+					<TextInput
+						placeholder="Enter your name"
+						value={name}
+						style={styles.input}
+						onChangeText={(text: string) => setName(text)}
+					/>
+					<Card.Divider></Card.Divider>
+					<Text style={{ left: 10 }}>Please enter your email</Text>
+					<TextInput
+						placeholder="Email"
+						value={email}
+						style={styles.input}
+						onChangeText={(text: string) => setEmail(text)}
+					/>
+					<Card.Divider></Card.Divider>
+					<Text style={{ left: 10 }}>Please enter your phone number</Text>
+					<TextInput
+						placeholder="Phone Number"
+						value={phone}
+						style={styles.input}
+						onChangeText={(text: string) => setPhone(text)}
+					/>
+					<Card.Divider></Card.Divider>
+					<Text style={{ left: 10 }}>Please choose the number of people</Text>
+					<RNPicker
+						data={[
+							{ label: "people: 1", value: 1 },
+							{ label: "people: 2", value: 2 },
+							{ label: "people: 3", value: 3 },
+							{ label: "people: 4", value: 4 },
+							{ label: "people: 5", value: 5 },
+							{ label: "people: 6", value: 6 },
+						]}
+						onSelect={(value) => {
+							setPersons(value["value"]);
+						}}
+						placeholder="Please choose"
+					/>
+
+					<Card.Divider></Card.Divider>
+					<Text style={{ left: 10 }}>
+						Please choose the date of your reservation
+					</Text>
+					{open ? (
+						<RNDateTimePicker
+							style={{ width: 200, height: 200 }}
+							value={new Date(dateOfReservation)}
+							mode="datetime"
+							minimumDate={new Date(2022, 5, 27)}
+							themeVariant="dark"
+							onChange={(_: any, date?: Date) => {
+								setOpen(false);
+								setDate(date);
+								// console.log("aaaa", dateOfReservation);
+							}}
+						/>
+					) : null}
+
+					<TouchableOpacity
+						style={styles.appButtonContainer2}
+						onPress={() => setOpen(true)}
+					>
+						<Text style={{ alignSelf: "center", color: "white" }}>
+							Click to open calendar
+						</Text>
+					</TouchableOpacity>
+					<Card.Divider></Card.Divider>
+					<TouchableOpacity onPress={submit} style={styles.appButtonContainer}>
+						<Text style={{ alignSelf: "center" }}>Reserve</Text>
+					</TouchableOpacity>
 				</View>
-			</ImageBackground>
-		</ParallaxScrollView>
+			</View>
+		</ImageBackground>
+		// </ParallaxScrollView>
 	);
 };
 

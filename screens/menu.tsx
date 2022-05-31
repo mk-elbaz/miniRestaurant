@@ -23,6 +23,7 @@ import * as Font from "expo-font";
 import * as axios from "axios";
 import { Card } from "react-native-elements";
 import { useNavigation } from "@react-navigation/native";
+import { Ionicons } from "@expo/vector-icons";
 
 const renderItem2 = ({ item }) => {
 	console.log("aaaaaa", item.name);
@@ -36,21 +37,29 @@ const renderItem2 = ({ item }) => {
 					height: 180,
 				}}
 			>
-				<Text style={{ fontFamily: "Brush", fontSize: 30, color: "black" ,paddingBottom:10}}>
+				<Text
+					style={{
+						fontFamily: "Brush",
+						fontSize: 30,
+						color: "black",
+						paddingBottom: 10,
+					}}
+				>
 					{item.name}
 				</Text>
-				<View style={{ flexDirection: "row", width: 255 ,alignContent:"center"}}>
-					<Text style={{ fontSize: 15,width:250 }}>{item.description}</Text>
+				<View
+					style={{ flexDirection: "row", width: 255, alignContent: "center" }}
+				>
+					<Text style={{ fontSize: 15, width: 250 }}>{item.description}</Text>
 					<Image
-						style={{ height: 90, width: 80,bottom:20,left:5 }}
+						style={{ height: 90, width: 80, bottom: 20, left: 5 }}
 						source={{ uri: item.image }}
 					/>
-					
 				</View>
 				<Card.Divider></Card.Divider>
-				<View style={{ flexDirection: "row",bottom:10,left:5}}>
-				<Text style={{ fontSize: 15 }}>Price: </Text>
-				<Text style={{color:"green",fontSize: 15}}>{item.price}$</Text>
+				<View style={{ flexDirection: "row", bottom: 10, left: 5 }}>
+					<Text style={{ fontSize: 15 }}>Price: </Text>
+					<Text style={{ color: "green", fontSize: 15 }}>{item.price}$</Text>
 				</View>
 			</Card>
 		</View>
@@ -58,6 +67,7 @@ const renderItem2 = ({ item }) => {
 };
 const Menu = () => {
 	const [menu, setMenu] = useState<Menuu[]>();
+	const navigation = useNavigation();
 
 	useEffect(() => {
 		Promise.all([axios.default.get(`http://192.168.2.244:3000/menu`)]).then(
@@ -81,25 +91,44 @@ const Menu = () => {
 				source={require("../assets/bckgrnd1-01.png")}
 			>
 				<View style={styles.container4}>
-					<Text
-						style={{
-							alignSelf: "center",
-							fontFamily: "Brush",
-							fontSize: 38,
-							padding: 10,
-							margin: 10,
-							top: 20,
-							color: "white",
-						}}
-					>
-						Menu
-					</Text>
+					<View style={{flexDirection:"row",alignContent:"center",top:15}}>
+						<TouchableOpacity
+							onPress={() => navigation.navigate("Landing" as never)}
+							style={{
+								top: 12,
+								elevation: 8,
+								backgroundColor: "#D55828",
+								borderRadius: 10,
+								paddingVertical: 10,
+								paddingHorizontal: 12,
+								width: 44,
+								height: 44,
+								margin: 10,
+								alignContent: "center",
+							}}
+						>
+							<Ionicons name="md-arrow-back" size={23} color="black" />
+						</TouchableOpacity>
+						<Text
+							style={{
+								alignSelf: "center",
+								fontFamily: "Brush",
+								fontSize: 38,
+								padding: 10,
+								margin: 10,
+								left: 70,
+								color: "white",
+							}}
+						>
+							Menu
+						</Text>
+					</View>
 					<FlatList
 						data={menu}
 						renderItem={renderItem2}
 						keyExtractor={(item) => item.name}
 						// style={{ height: "100%", paddingBottom: 50 }}
-						contentContainerStyle={{paddingBottom:250}}
+						contentContainerStyle={{ paddingBottom: 250 }}
 					/>
 					<Card.Divider></Card.Divider>
 				</View>
@@ -133,7 +162,7 @@ const styles = StyleSheet.create({
 		// alignItems: "center",
 		justifyContent: "center",
 		height: 230,
-		top:10
+		top: 10,
 	},
 	input: {
 		height: 40,

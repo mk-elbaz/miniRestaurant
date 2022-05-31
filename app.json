@@ -4,7 +4,7 @@
     "slug": "miniRestaurant",
     "version": "1.0.0",
     "orientation": "portrait",
-    "icon": "./assets/icon.png",
+    "icon": "./assets/ico2-01.png",
     "userInterfaceStyle": "light",
     "splash": {
       "image": "./assets/Splash3-01.png",
@@ -22,12 +22,12 @@
     },
     "android": {
       "adaptiveIcon": {
-        "foregroundImage": "./assets/adaptive-icon.png",
+        "foregroundImage": "./assets/ico_android-01.png",
         "backgroundColor": "#FFFFFF"
       }
     },
     "web": {
-      "favicon": "./assets/favicon.png"
+      "favicon": "./assets/ico2-01.png"
     }
   }
 }
