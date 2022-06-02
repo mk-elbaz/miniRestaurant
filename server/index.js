@@ -37,11 +37,12 @@ app.get("/menu", function (req, res) {
 });
 
 app.post("/reserve", (req, res) => {
+	const date = req.body.date.split('T');
 	insert(req.body);
 	sendMail(
 		req.body.email,
 		"Reserved!!, Table reservation at Burger Overflow",
-		`Dear ${req.body.name}, Your table is reserved on the following date ${req.body.date}`
+		`Dear ${req.body.name}, Your table is reserved on the following date ${date[0]}`
 	);
 	res.send(
 		"202"
