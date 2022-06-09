@@ -52,8 +52,8 @@ const Reserve = () => {
 	const submit = async () => {
 		console.log(data);
 		await axios
-			// .post("http://192.168.2.244:3000/reserve", data, {
-			.post("http://localhost:3000/reserve", data, {
+			.post("http://192.168.2.244:3000/reserve", data, {
+			// .post("http://localhost:3000/reserve", data, {
 				headers: {
 					Accept: "application/json",
 				},

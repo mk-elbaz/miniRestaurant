@@ -59,7 +59,7 @@ const renderItem2 = ({ item }) => {
 				<Card.Divider></Card.Divider>
 				<View style={{ flexDirection: "row", bottom: 10, left: 5 }}>
 					<Text style={{ fontSize: 15 }}>Price: </Text>
-					<Text style={{ color: "green", fontSize: 15 }}>{item.price}$</Text>
+					<Text style={{ color: "green", fontSize: 15 }}>${item.price}</Text>
 				</View>
 			</Card>
 		</View>
