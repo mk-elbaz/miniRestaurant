@@ -1,6 +1,7 @@
 import landing from "./screens/landing";
 import reserve from "./screens/reserve";
 import menu from "./screens/menu";
+import aboutUs from "./screens/aboutUs";
 import React, { useCallback, useEffect, useState } from "react";
 import { NavigationContainer } from "@react-navigation/native";
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
@@ -90,6 +91,13 @@ const App = () => {
 				<Stack.Screen
 					name="menu"
 					component={menu}
+					options={{
+						headerShown: false,
+					}}
+				/>
+				<Stack.Screen
+					name="aboutUs"
+					component={aboutUs}
 					options={{
 						headerShown: false,
 					}}

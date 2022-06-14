@@ -48,8 +48,7 @@ const Landing = () => {
 		<ParallaxScrollView
 			backgroundColor="#D55828"
 			contentBackgroundColor="#131216"
-			parallaxHeaderHeight={0}
-		>
+			parallaxHeaderHeight={0}>
 			<ImageBackground
 				style={{ flex: 1 }}
 				source={require("../assets/bckgrnd1-01.png")}
@@ -143,6 +142,39 @@ const Landing = () => {
 								style={styles.appButtonContainer}
 							>
 								<Text style={styles.appButtonText}>Browse Menu</Text>
+							</TouchableOpacity>
+						</Card>
+					</View>
+					<View style={styles.container3}>
+						<Card
+							containerStyle={{
+								backgroundColor: "#2A2024",
+								borderColor: "gray",
+								borderRadius: 10,
+							}}
+						>
+							<Card.Title
+								adjustsFontSizeToFit
+								style={{ color: "white", fontSize: 17 }}
+							>
+								About Us
+							</Card.Title>
+							<Card.Divider color="white" />
+							<Image
+								style={{
+									resizeMode: "contain",
+									width: 300,
+									height: 200,
+									right: -5,
+								}}
+								source={require("../assets/ico_backgrnd-01.png")}
+							></Image>
+							<Card.Divider color="white" style={{ padding: 5 }} />
+							<TouchableOpacity
+								onPress={() => navigation.navigate("aboutUs" as never)}
+								style={styles.appButtonContainer}
+							>
+								<Text style={styles.appButtonText}>Learn More</Text>
 							</TouchableOpacity>
 						</Card>
 					</View>
